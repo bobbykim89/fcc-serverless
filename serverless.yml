@@ -14,7 +14,7 @@ provider:
     REGION_NAME: ${env:REGION_NAME}
   iam:
     role:
-      name: serverless-ssm-role
+      name: serverless-ssm-role-${env:STAGE, "prod"}
       statements:
         - Effect: 'Allow'
           Resource: '*'

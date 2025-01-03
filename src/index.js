@@ -4,6 +4,7 @@ const { getDbClient } = require('./db/clients')
 const crud = require('./db/crud')
 const validators = require('./db/validators')
 
+const STAGE = process.env.STAGE
 const app = express()
 app.use(express.json())
 
@@ -14,6 +15,7 @@ app.get('/', async (req, res, next) => {
   return res.status(200).json({
     message: 'Hello from Pollito!',
     results: results.now,
+    stage: STAGE,
   })
 })
 
@@ -43,7 +45,7 @@ app.post('/leads', async (req, res, next) => {
     })
   }
   // insert data to the databasae
-  const result = await crud.newLead(body)
+  const result = await crud.newLead(data)
   return res.status(201).json({
     results: result,
   })

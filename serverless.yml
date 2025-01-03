@@ -10,8 +10,7 @@ provider:
   runtime: nodejs20.x
   environment:
     DEBUG: ${env:DEBUG, 0}
-    DATABASE_URL: ${env:DATABASE_URL, "fallback value"}
-    DATABASE_URL_SSM_PARAM: ${env:DATABASE_URL_SSM_PARAM}
+    STAGE: ${env:STAGE, "prod"}
     REGION_NAME: ${env:REGION_NAME}
   iam:
     role:

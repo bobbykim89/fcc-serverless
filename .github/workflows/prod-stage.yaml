@@ -2,7 +2,7 @@ name: Deploy Production App
 
 on:
   # push:
-  #   branches: [ main ]
+  #   branches: [ master ]
   pull_request:
     types: [closed]
   workflow_dispatch:
@@ -25,4 +25,4 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Deploy
-        run: npm run deploy
+        run: npm run deploy:prod

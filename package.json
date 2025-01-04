@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "serverless offline --stage dev",
     "info:prod": "serverless info --stage prod --region us-east-2",
+    "info:dev": "serverless info --stage prod --region us-east-2",
     "deploy:prod": "serverless deploy --stage prod --region us-east-2",
+    "deploy:dev": "serverless deploy --stage dev --region us-east-2",
     "remove:prod": "serverless remove --stage prod --region us-east-2",
     "generate:schema": "drizzle-kit generate --config=drizzle.config.js",
-    "migrate": "tsx src/cli/migrator.js"
+    "migrate": "tsx src/cli/migrator.js",
+    "vercel-build": "echo 'hello'"
   },
   "dependencies": {
     "@aws-sdk/client-ssm": "^3.716.0",

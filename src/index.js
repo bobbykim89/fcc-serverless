@@ -62,4 +62,5 @@ app.use((req, res, next) => {
 //   console.log('running at http://localhost:3000')
 // })
 
+module.exports.app = app
 exports.handler = serverless(app)
